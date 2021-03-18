@@ -9,8 +9,7 @@ const client = new CommandoClient({
 client.registry
 	.registerDefaultTypes()
 	.registerGroups([
-		['general', 'Essential and basic commands.'],
-		['moderation', 'Used for community administration.'],
+		['general', 'Essential and basic commands.']
 	])
 	.registerDefaultGroups()
 	.registerDefaultCommands()
