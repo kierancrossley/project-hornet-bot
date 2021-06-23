@@ -1,19 +1,27 @@
 {
-    "name": "project-hornet-bot",
-    "version": "1.0.0",
-    "description": "Bot made for ProjectHornet.co",
-    "main": "index.js",
-    "dependencies": {
-      "discord.js": "^12.5.1",
-      "discord.js-commando": "github:discordjs/Commando"
-    },
-    "devDependencies": {},
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node bot.js"
-    },
-    "keywords": [],
-    "author": "Kieraann#0001 <http://steamcommunity.com/profiles/76561198358331131>",
-    "license": "ISC"
-  }
-  
+  "name": "project-hornet-bot",
+  "version": "1.0.0",
+  "description": "Bot made for ProjectHornet.co",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "discord.js-commando": "github:discordjs/Commando",
+    "source-server-query": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
+  },
+  "keywords": [],
+  "author": "Kieraann#0001 <http://steamcommunity.com/profiles/76561198358331131>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kierancrossley/project-hornet-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kierancrossley/project-hornet-bot/issues"
+  },
+  "homepage": "https://github.com/kierancrossley/project-hornet-bot#readme"
+}
