@@ -31,6 +31,6 @@ module.exports = class StatusCommand extends Command {
 			.then(console.log)
 			.catch(console.log)
 			.then(query.close)
-			.then(message.say('Meow!'));z
+			.then(message.say);
 	}
 };
