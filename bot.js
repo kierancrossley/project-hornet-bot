@@ -18,7 +18,7 @@ client.registry
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}! (${client.user.id})`);
-    client.user.setActivity('on Hornet DarkRP.');
+    client.user.setActivity('on Hornet DarkRP');
 });
 
 client.on('error', console.error);
