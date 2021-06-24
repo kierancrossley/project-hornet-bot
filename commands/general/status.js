@@ -19,5 +19,6 @@ module.exports = class StatusCommand extends Command {
                 query.close
                 return message.say(response)
             })
+            .catch(console.log)
 	}
 };
