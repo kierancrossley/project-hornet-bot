@@ -10,6 +10,7 @@ client.registry
 	.registerDefaultTypes()
 	.registerGroups([
 		['general', 'Essential and basic commands.']
+		['server', 'Server information commands.']
 	])
 	.registerDefaultGroups()
 	.registerDefaultCommands()
@@ -17,7 +18,7 @@ client.registry
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}! (${client.user.id})`);
-    client.user.setActivity('with Commando');
+    client.user.setActivity('on Hornet DarkRP.');
 });
 
 client.on('error', console.error);
