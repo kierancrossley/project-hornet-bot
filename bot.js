@@ -30,7 +30,7 @@ setInterval(() => {
     query.info(ip, "1", 2000)
         .then(data => {
 			if (data.name == "Error") {
-				client.user.setStatus("dnd", "Server offline!");
+				client.user.setStatus("dnd");
 			} else {
 				if (data.playersmum == data.maxplayers) {
 					client.user.setStatus("idle");
@@ -44,6 +44,6 @@ setInterval(() => {
 			console.log(players)
         })
 		.catch(console.error)
-}, 5000);
+}, 10000);
 
 client.login(process.env.TOKEN);
