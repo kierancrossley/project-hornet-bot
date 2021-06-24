@@ -29,16 +29,20 @@ let players = null;
 setInterval(() => {
     query.info(ip, "1", 2000)
         .then(data => {
-			if ((players !== data.playersnum) && (data.playersmum !== "undefined")) {
-				client.user.setStatus("online");
-                client.user.setActivity(`with ${data.playersnum} players`);
-            } else if (data.playersmum == data.maxplayers) {
-				client.user.setStatus("idle");
-			} else {
+
+			if (data.name == "Error") {
 				client.user.setStatus("dnd", "Server offline!");
+			} else {
+				if (data.playersmum == data.maxplayers) {
+					client.user.setStatus("idle");
+				} else {
+					client.user.setStatus("online");
+				}
+				client.user.setActivity(`with ${data.playersnum} players`);
 			}
 
 			players = data.playersnum;
+			console.log(players)
         })
 		.catch(console.error)
 }, 5000);
