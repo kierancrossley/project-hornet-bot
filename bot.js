@@ -34,19 +34,18 @@ setInterval(() => {
 				client.user.setActivity("on offline mode")
 				status = "dnd";
 			} else {
-				if ((1 == 1) && (status !== "idle")) {
-					client.user.setStatus("idle")
-					status = "idle";
-				} else if (status !== "online") {
-					client.user.setStatus("online")
-					status = "online";
-				}
 				if (players !== data.playersnum) {
 					client.user.setActivity(`with ${data.playersnum} players`)
 					players = data.playersnum;
+					if ((data.playersnum == data.maxplayers) && (status !== "idle")) {
+						client.user.setStatus("idle")
+						status = "idle";
+					} else if ((data.playersnum !== data.maxplayers) && (status !== "online")) {
+						client.user.setStatus("online");
+					}
 				}
 			}
-			console.log(status)
+			console.log(players, status)
         })
 		.catch(console.error)
 }, 15000);
