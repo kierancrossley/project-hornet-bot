@@ -11,17 +11,13 @@ module.exports = class StatusCommand extends Command {
 		});
 	}
 
-	run(message) {
-        var status = "Offline"
-		query.info("208.103.169.207", 27015, 2000)
-			.then(function(response){
-                status = response
-                console.log(response);
-            })
-			.catch()
-			.then(function(){
-                query.close
+	async run(message) {
+		query.info("208.103.169.207", 27015, 2000).then(function(response){
+                var status = response
+                console.log(response)
                 message.say(status);
-        });
+            })
+			.catch(console.log)
+			.then(query.close);
 	}
 };
