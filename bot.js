@@ -48,6 +48,6 @@ setInterval(() => {
 			console.log(players, status)
         })
 		.catch(console.error)
-}, 15000);
+}, 30000);
 
 client.login(process.env.TOKEN);
