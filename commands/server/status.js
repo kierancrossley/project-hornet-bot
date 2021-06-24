@@ -1,7 +1,6 @@
 const {Command} = require("discord.js-commando");
 const Discord = require("discord.js");
 const query = require("source-server-query");
-const ip = process.env.IP, port = process.env.PORT
 
 module.exports = class StatusCommand extends Command {
 	constructor(client) {
@@ -15,7 +14,7 @@ module.exports = class StatusCommand extends Command {
  
     run(message) {
         query
-            .info(ip, port, 2000)
+            .info("208.103.169.207", 27015, 2000)
             .then(data => {
                 var embed = {
                     color: 0x2ecc71,
