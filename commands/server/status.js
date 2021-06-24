@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 const query = require("source-server-query");
 const ip = process.env.IP, port = process.env.PORT
 
+console.log(ip, port)
+
 module.exports = class StatusCommand extends Command {
 	constructor(client) {
 		super(client, {
