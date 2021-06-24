@@ -12,16 +12,14 @@ module.exports = class StatusCommand extends Command {
 	}
 
 	run(message) {
-        let status
+        var status = "Offline"
 		query.info("208.103.169.207", 27015, 2000)
 			.then(function(response){
                 status = response
                 console.log(response);
             })
 			.catch(console.log)
-			.then(function(){
-                query.close
-                return message.say(status)
-        });
+			.then(query.close);
+        return message.say(status)
 	}
 };
