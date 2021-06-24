@@ -20,7 +20,7 @@ client.registry
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}! (${client.user.id})`);
-    client.user.setActivity('on Hornet DarkRP');
+    client.user.setActivity('the waiting game...');
 });
 
 client.on('error', console.error);
@@ -31,6 +31,7 @@ setInterval(() => {
         .then(data => {
 			if (data.name == "Error") {
 				client.user.setStatus("dnd");
+				client.user.setActivity("on offline mode");
 			} else {
 				if (data.playersmum == data.maxplayers) {
 					client.user.setStatus("idle");
