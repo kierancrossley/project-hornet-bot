@@ -1,7 +1,7 @@
 const {Command} = require("discord.js-commando");
 const Discord = require("discord.js");
 const query = require("source-server-query");
-const ip = process.env.IP, port = process.env.PORT
+const ip = process.env.SERVER_IP, port = process.env.SERVER_PORT
 
 console.log(ip, port)
 
