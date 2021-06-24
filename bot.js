@@ -46,6 +46,7 @@ setInterval(() => {
 					players = data.playersnum;
 				}
 			}
+			console.log(status)
         })
 		.catch(console.error)
 }, 15000);
