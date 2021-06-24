@@ -19,7 +19,9 @@ module.exports = class StatusCommand extends Command {
                 console.log(response);
             })
 			.catch(console.log)
-			.then(query.close);
-        return message.say(status)
+			.then(function(){
+                query.close
+                message.say(status);
+        });
 	}
 };
