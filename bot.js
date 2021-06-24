@@ -27,7 +27,7 @@ client.on('error', console.error);
 
 let players = null, status = "online"
 setInterval(() => {
-    query.info(ip, "1", 2000)
+    query.info(ip, 27015, 2000)
         .then(data => {
 			if ((data.name == "Error") && (status !== "dnd")) {
 				client.user.setStatus("dnd");
