@@ -17,7 +17,7 @@ module.exports = class StatusCommand extends Command {
  
     run(message) {
         query
-            .info(ip, port, 2000)
+            .info(ip, parseInt(port), 2000)
             .then(data => {
                 var embed = {
                     color: 0x2ecc71,
