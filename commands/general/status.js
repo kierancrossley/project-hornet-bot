@@ -15,8 +15,8 @@ module.exports = class StatusCommand extends Command {
         query
             .info("208.103.169.207", 27015, 2000)
             .then(data => {
-                message.say(data)
+                console.log(data.playersnum)
             })
-            .catch(console.log)
+            .catch(console.error)
 	}
 };
