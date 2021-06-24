@@ -27,12 +27,18 @@ client.on('error', console.error);
 
 let players = null;
 setInterval(() => {
-    query.info(ip, port, 2000)
+    query.info(ip, "1", 2000)
         .then(data => {
-            if (players !== data.playersnum) {
+			if ((players !== data.playersnum) && (data.playersmum !== "undefined")) {
+				client.user.setStatus("online");
                 client.user.setActivity(`with ${data.playersnum} players`);
-                players = data.playersnum;
-            }
+            } else if (data.playersmum == data.maxplayers) {
+				client.user.setStatus("idle");
+			} else {
+				client.user.setStatus("dnd", "Server offline!");
+			}
+
+			players = data.playersnum;
         })
 		.catch(console.error)
 }, 5000);
