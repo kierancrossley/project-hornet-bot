@@ -12,8 +12,8 @@ module.exports = class StatusCommand extends Command {
 	}
 
 	run(message) {
-		query.info("208.103.169.207", 27015, 2000).then(function(response){
-                message.say(await response);
+		query.info("208.103.169.207", 27015, 2000).then(async function(response){
+                message.say(response);
             })
 			.catch(console.log)
 			.then(query.close);
