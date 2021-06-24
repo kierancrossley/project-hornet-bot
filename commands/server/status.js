@@ -1,6 +1,7 @@
 const {Command} = require("discord.js-commando");
 const Discord = require("discord.js");
 const query = require("source-server-query");
+const ip = process.env.IP, port = process.env.PORT
 
 module.exports = class StatusCommand extends Command {
 	constructor(client) {
@@ -8,12 +9,11 @@ module.exports = class StatusCommand extends Command {
 			name: 'status',
 			group: 'server',
 			memberName: 'status',
-			description: 'Replies with server status.',
+			description: 'Replies with server status',
 		});
 	}
  
     run(message) {
-        var ip = process.env.IP, port = process.env.PORT
         query
             .info(ip, port, 2000)
             .then(data => {
