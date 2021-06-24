@@ -19,7 +19,7 @@ module.exports = class StatusCommand extends Command {
 	}
 
 	run(message) {
-        var status = await serverStatus()
+        var status = serverStatus()
 		return message.say(status)
 	}
 };
