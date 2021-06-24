@@ -25,26 +25,29 @@ client.once('ready', () => {
 
 client.on('error', console.error);
 
-let players = null;
+let players = null, status = "online"
 setInterval(() => {
     query.info(ip, "1", 2000)
         .then(data => {
-			if (data.name == "Error") {
+			if ((data.name == "Error") && (status !== "dnd")) {
 				client.user.setStatus("dnd");
-				client.user.setActivity("on offline mode");
+				client.user.setActivity("on offline mode")
+				status = "dnd";
 			} else {
-				if (data.playersmum == data.maxplayers) {
-					client.user.setStatus("idle");
-				} else {
-					client.user.setStatus("online");
+				if ((data.playersnum == data.maxplayers) && (status !== "idle")) {
+					client.user.setStatus("idle")
+					status = "idle";
+				} else if (status !== "online") {
+					client.user.setStatus("online")
+					status = "online";
 				}
-				client.user.setActivity(`with ${data.playersnum} players`);
+				if (players !== data.playersnum) {
+					client.user.setActivity(`with ${data.playersnum} players`)
+					players = data.playersnum;
+				}
 			}
-
-			players = data.playersnum;
-			console.log(players)
         })
 		.catch(console.error)
-}, 10000);
+}, 15000);
 
 client.login(process.env.TOKEN);
