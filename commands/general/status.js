@@ -10,11 +10,13 @@ module.exports = class StatusCommand extends Command {
 			description: 'Replies with server status.',
 		});
 	}
-
+ 
 	run(message) {
-        query.info("208.103.169.207", 27015, 2000).then(function(response){
-            console.log(response)
-            query.close
-        })
+        query.info("208.103.169.207", 27015, 2000)
+            .then(function(response){
+                console.log(response)
+                query.close
+                return message.say(response)
+            })
 	}
 };
