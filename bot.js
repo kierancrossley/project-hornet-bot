@@ -1,5 +1,6 @@
 const {CommandoClient} = require('discord.js-commando');
 const path = require('path');
+const query = require("source-server-query");
 const ip = process.env.SERVER_IP, port = parseInt(process.env.SERVER_PORT)
 
 const client = new CommandoClient({
