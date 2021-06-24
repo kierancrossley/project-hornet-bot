@@ -34,7 +34,7 @@ setInterval(() => {
 				client.user.setActivity("on offline mode")
 				status = "dnd";
 			} else {
-				if ((data.playersnum == data.maxplayers) && (status !== "idle")) {
+				if ((1 == 1) && (status !== "idle")) {
 					client.user.setStatus("idle")
 					status = "idle";
 				} else if (status !== "online") {
