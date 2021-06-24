@@ -14,7 +14,7 @@ module.exports = class StatusCommand extends Command {
  
     run(message) {
         query
-            .info(process.env.IP, process.env.PORT, 2000)
+            .info(process.env.SERVER_IP, process.env.PORT, 2000)
             .then(data => {
                 var embed = {
                     color: 0x2ecc71,
