@@ -29,7 +29,6 @@ let players = null;
 setInterval(() => {
     query.info(ip, "1", 2000)
         .then(data => {
-
 			if (data.name == "Error") {
 				client.user.setStatus("dnd", "Server offline!");
 			} else {
