@@ -18,7 +18,7 @@ module.exports = class StatusCommand extends Command {
                 status = response
                 console.log(response);
             })
-			.catch(console.log)
+			.catch()
 			.then(function(){
                 query.close
                 message.say(status);
