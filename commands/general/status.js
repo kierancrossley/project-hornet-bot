@@ -12,10 +12,16 @@ module.exports = class StatusCommand extends Command {
 	}
 
 	run(message) {
+        let status
 		query.info("208.103.169.207", 27015, 2000)
-			.then(console.log)
+			.then(function(response){
+                status = response
+                console.log(response);
+            })
 			.catch(console.log)
-			.then(query.close)
-			.then(message.say);
+			.then(function(){
+                query.close
+                return message.say(status)
+        });
 	}
 };
