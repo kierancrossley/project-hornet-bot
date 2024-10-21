@@ -1,5 +1,5 @@
 # 👾 Project Hornet Discord Bot
-- This was a sinple project using JavaScript to send server information to players on Discord
+- This was a simple project using JavaScript to send Garry's Mod server information to players on Discord
 - This project used the [Discord.js](https://discord.js.org/) library
 - This project was created to practice with JS and Discord.js 
 ## 💻 Server Query via Bot Status
